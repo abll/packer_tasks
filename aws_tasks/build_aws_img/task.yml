@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: hashicorp/packer
+    tag: latest
+
+
+inputs:
+  - name: packer_tasks
+  - name: packer_images
+
+params:
+  FILE_NAME:
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_KEY:
+  AWS_REGION:
+
+run:
+  path: packer_tasks/aws_tasks/build_aws_img/task.sh
